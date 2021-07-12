@@ -202,18 +202,16 @@ func retrieveOrCreateUser(chatID int64) (User, error) {
 			return u, err
 		}
 
-		telegram.SendMessage(chatID, `Welcome to the A5.2 Telegram Bot! :D
-		To get started enter:
+		telegram.SendMessage(chatID, `Welcome worthy heroes of SynoRHa! You have arrived at The TaveRHn; a place for you to commune with your fellow heroes. 
 
-		/start
+Whether you’re here to know more about your faction or discover new secRHets, all of you are given this chance to engage in meaningful conversations with your other counterparts!
 
-		If you feel like ending the conversation, type:
+While your identities remain anonymous, you’re more than welcome to exchange your hero IDs with them, and perhaps even find a potential loveRH - nothing is stopping you now~ 
+Use this platform wisely and safely, and cheers to the start of a new paRHtnership! 
 
-		/end
-
-		If you want another chat partner, type /start again after typing /end!
-	
-		Have fun!`, emptyOpts)
+Bot founder: @aaldentnay / @nuschatbot
+Additional credits: @richardlidf
+`, emptyOpts)
 	}
 
 	return retrieveUser(chatID)
