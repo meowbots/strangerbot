@@ -47,7 +47,16 @@ func commandStart(u User, m telegrambot.Message) bool {
 
 	db.Exec("UPDATE users SET available = 1 WHERE chat_id = ?", u.ChatID)
 
-	telegram.SendMessage(u.ChatID, "Looking for another cool A5 bestie to match you with... Hold on!", emptyOpts)
+	telegram.SendMessage(u.ChatID, "Looking for another hero to match you with…. Please be patient and hold on! The TaveRHn requires some time to match heroes across all factions, so keep your notifications on!" 
+
+While waiting, why not try to solve some lovely riddles?
+
+Q: What do spades, hearts, clubs and diamonds have in common? 
+A: They’re all suited for you~
+ 
+Q: Who is better? Ace, King, Queen or Jack?
+A: It’s ONE. Because I’m only one for you~
+", emptyOpts)
 	startJobs <- u.ChatID
 
 	return true
@@ -69,7 +78,8 @@ func commandStop(u User, m telegrambot.Message) bool {
 		return false
 	}
 
-	telegram.SendMessage(u.ChatID, "We're ending the conversation...", emptyOpts)
+	telegram.SendMessage(u.ChatID, "Head to @ruminzz if you need any assistance! Note that information of anyone who breaches the rules will be tracked by the Ace of Hearts, and reported to Headquarters immediately. (basically it means you’re screwed so try not to break any rules) 
+", emptyOpts)
 
 	endConversationQueue <- EndConversationEvent{ChatID: u.ChatID}
 
@@ -188,18 +198,14 @@ func commandHelp(u User, m telegrambot.Message) bool {
 
 	telegram.SendMessage(m.Chat.ID, `Help:
 
-Use /start to start looking for a conversational partner, once you're matched you can use /end to end the conversation.
+Use /start to start looking for a conversation partner; once you're matched you can use /end to end the conversation.
 
 Use /report to report a user, use it as follows:
 /report <reason>
 
 Use /nopics to disable receiving photos, and /nopics if you want to enable it again.
 
-HEAD OVER to @unichatbotchannel for rules, updates, announcements or info on how you can support the bot!
-
-Sending images and videos are a beta functionality, but appear to be working fine.
-
-If you require any help, feel free to contact @aaldentnay !`, emptyOpts)
+If you require any help with regards to the bot, feel free to contact @aaldentnay ! Head to @unichatbotchannel for other NUS chat bot developments or @nuschatbot for the parent NUS Chat Bot.`, emptyOpts)
 
 	return true
 }
