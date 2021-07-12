@@ -211,6 +211,17 @@ Use this platform wisely and safely, and cheers to the start of a new paRHtnersh
 
 Bot founder: @aaldentnay / @nuschatbot
 Additional credits: @richardlidf
+
+
+To get started, enter; 
+
+/start 
+
+To end a convo, type; 
+
+/end
+
+Head to @ruminzz if you need any assistance! 
 `, emptyOpts)
 	}
 
