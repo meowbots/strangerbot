@@ -69,7 +69,7 @@ func commandStop(u User, m telegrambot.Message) bool {
 		return false
 	}
 
-	telegram.SendMessage(u.ChatID, "Head to @ruminzz if you need any assistance! Note that information of anyone who breaches the rules will be tracked by the Ace of Hearts, and reported to Headquarters immediately. (basically it means you’re screwed so try not to break any rules) ", emptyOpts)
+	telegram.SendMessage(u.ChatID, "Sadly, we’re ending the conversation… ", emptyOpts)
 
 	endConversationQueue <- EndConversationEvent{ChatID: u.ChatID}
 
