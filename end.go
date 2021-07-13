@@ -28,7 +28,7 @@ func endConversationWorker(jobs <-chan EndConversationEvent) {
 			db.Exec("UPDATE users SET available = 0 WHERE chat_id = ?", u.ChatID)
 		}
 
-		telegram.SendMessage(u.ChatID, "Sadly, we’re ending the conversation…Although time spent together was short, we still hope you enjoyed conversing with one another here in the TaveRHn! Type /start to get matched with a new hero!", emptyOpts)
+		telegram.SendMessage(u.ChatID, "Although time spent together was short, we still hope you enjoyed conversing with one another here in the TaveRHn! Type /start to get matched with a new hero!", emptyOpts)
 		telegram.SendMessage(u.ChatID, "Type /start to get matched with a new hero!", emptyOpts)
 	}
 }
