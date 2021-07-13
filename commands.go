@@ -47,8 +47,7 @@ func commandStart(u User, m telegrambot.Message) bool {
 
 	db.Exec("UPDATE users SET available = 1 WHERE chat_id = ?", u.ChatID)
 
-	telegram.SendMessage(u.ChatID, "Looking for another hero to match you with…. Please be patient and hold on! The TaveRHn requires some time to match heroes across all factions, so keep your notifications on!
-", emptyOpts)
+	telegram.SendMessage(u.ChatID, "Looking for another hero to match you with…. Please be patient and hold on! The TaveRHn requires some time to match heroes across all factions, so keep your notifications on!", emptyOpts)
 	startJobs <- u.ChatID
 
 	return true
@@ -70,8 +69,7 @@ func commandStop(u User, m telegrambot.Message) bool {
 		return false
 	}
 
-	telegram.SendMessage(u.ChatID, "Head to @ruminzz if you need any assistance! Note that information of anyone who breaches the rules will be tracked by the Ace of Hearts, and reported to Headquarters immediately. (basically it means you’re screwed so try not to break any rules) 
-", emptyOpts)
+	telegram.SendMessage(u.ChatID, "Head to @ruminzz if you need any assistance! Note that information of anyone who breaches the rules will be tracked by the Ace of Hearts, and reported to Headquarters immediately. (basically it means you’re screwed so try not to break any rules) ", emptyOpts)
 
 	endConversationQueue <- EndConversationEvent{ChatID: u.ChatID}
 
