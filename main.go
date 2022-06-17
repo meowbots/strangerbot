@@ -202,16 +202,9 @@ func retrieveOrCreateUser(chatID int64) (User, error) {
 			return u, err
 		}
 
-		telegram.SendMessage(chatID, `Welcome worthy heroes of SynoRHa! You have arrived at The TaveRHn; a place for you to commune with your fellow heroes. 
+		telegram.SendMessage(chatID, `Welcome to the @JCchatbot! This bot was made to make interactions with and knowing other JC students easier! Made during the June holidays, it helps one to find study buddies, new friends or just someone to talk to! Head to the @JuniorCollegeBot instead to match by JC/subjects/interests/match only with verified students but match time there is a lot slower.
 
-Whether you’re here to know more about your faction or discover new secRHets, all of you are given this chance to engage in meaningful conversations with your other counterparts!
-
-While your identities remain anonymous, you’re more than welcome to exchange your hero IDs with them, and perhaps even find a potential loveRH - nothing is stopping you now~ 
-Use this platform wisely and safely, and cheers to the start of a new paRHtnership! 
-
-Bot founder: @aaldentnay / @nuschatbot
-Additional credits: @richardlidf
-
+Bot founder: @aaldentnay
 
 To get started, enter; 
 
@@ -221,10 +214,11 @@ To end a convo, type;
 
 /end
 
-Head to @ruminzz if you need any assistance! 
+Make sure to follow @unichatbotchannel for announcements!
 
 
-Note that information of anyone who breaches the rules will be tracked by the Ace of Hearts, and reported to Headquarters immediately. (basically it means you’re screwed so try not to break any rules) 
+Note that breaching the rules will result in a permanent ban across not just this bot, but all Telegram bots. Anything illegal will result in data handed over to the police (remember that anything illegal in Singapore is as illegal on the bot). You're anonymous only until you break the rules.
+Enter /report (followed by reason in a single message) to report a user during a convo!
 
 `, emptyOpts)
 	}
