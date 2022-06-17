@@ -22,7 +22,7 @@ func endConversationWorker(jobs <-chan EndConversationEvent) {
 			db.Exec("UPDATE users SET match_chat_id = NULL, available = 0, previous_match = ? WHERE chat_id = ?", u.MatchChatID, u.ChatID)
 			db.Exec("UPDATE users SET match_chat_id = NULL, available = 0, previous_match = ? WHERE chat_id = ?", u.ChatID, u.MatchChatID)
 
-			telegram.SendMessage(u.MatchChatID.Int64, "Sadly, we’re ending the conversation…Although time spent together was short, we still hope you enjoyed conversing with one another here in the TaveRHn! Type /start to get matched with a new hero!", emptyOpts)
+			telegram.SendMessage(u.MatchChatID.Int64, "Sadly, we’re ending the conversation…Although time spent together was short, we still hope you enjoyed conversing with one another here on the @JCchatbot! Type /start to get matched with another student!  Do also check out @JuniorCollegeBot to match only with verified students + by jc/subject/interest!", emptyOpts)
 			telegram.SendMessage(u.MatchChatID.Int64, "Type /start to get matched with a new hero", emptyOpts)
 		} else {
 			db.Exec("UPDATE users SET available = 0 WHERE chat_id = ?", u.ChatID)
