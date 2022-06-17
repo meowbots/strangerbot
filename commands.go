@@ -47,7 +47,7 @@ func commandStart(u User, m telegrambot.Message) bool {
 
 	db.Exec("UPDATE users SET available = 1 WHERE chat_id = ?", u.ChatID)
 
-	telegram.SendMessage(u.ChatID, "Looking for another hero to match you with…. Please be patient and hold on! The TaveRHn requires some time to match heroes across all factions, so keep your notifications on! \n test", emptyOpts)
+	telegram.SendMessage(u.ChatID, "Looking for another student to match you with…. Please be patient and hold on! Keep your notifications on!", emptyOpts)
 	startJobs <- u.ChatID
 
 	return true
@@ -195,7 +195,7 @@ Use /report to report a user, use it as follows:
 
 Use /nopics to disable receiving photos, and /nopics if you want to enable it again.
 
-If you require any help with regards to the bot, feel free to contact @aaldentnay ! Head to @unichatbotchannel for other NUS chat bot developments or @nuschatbot for the parent NUS Chat Bot.`, emptyOpts)
+If you require any help with regards to the bot, feel free to contact @aaldentnay ! Make sure to follow @unichatbotchannel for new developments and important announcements!`, emptyOpts)
 
 	return true
 }
